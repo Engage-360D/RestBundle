@@ -1,0 +1,10 @@
+parameters:
+    engage360d_rest.form.factory.class: Engage360d\Bundle\RestBundle\Form\FormFactory
+    engage360d_rest.entity_manager.factory.class: Engage360d\Bundle\RestBundle\EntityManager\EntityManagerFactory
+
+services:
+    engage360d_rest.form.factory:
+        class: %engage360d_rest.form.factory.class%
+
+    engage360d_rest.entity_manager.factory:
+        class: %engage360d_rest.entity_manager.factory.class%
