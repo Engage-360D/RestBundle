@@ -20,7 +20,7 @@ class RestController extends Controller
     protected function getErrorMessages(Form $form)
     {
         $errors = array();
-    
+
         foreach ($form->getErrors() as $key => $error) {
                 $errors[] = $error->getMessage();
         }
@@ -30,7 +30,11 @@ class RestController extends Controller
                 $errors[$child->getName()] = $this->getErrorMessages($child);
             }
         }
-    
+
+        foreach ($form->getExtraData() as $key => $extraField) {
+            $errors[$key] = "Extra field";
+        }    
+
         return $errors;
     }
 }
